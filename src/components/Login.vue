@@ -3,14 +3,20 @@
     <div class="fields-wrapper">
       <div class="in align-items-center">
         <label class="p-3" for="username"><strong>Username</strong></label>
-        <input type="text" placeholder="Username" style="text-align: center" />
+        <input type="text" placeholder="Username" />
       </div>
 
       <div class="in align-items-center">
         <label class="p-3" for="Password"><strong>Password</strong></label>
-        <input type="text" placeholder="Password" style="text-align: center" />
+        <input
+          type="text"
+          style="-webkit-text-security: disc"
+          placeholder="Password"
+        />
       </div>
-      <button class="submit-btn mt-3">Login</button>
+      <div>
+        <button class="submit-btn mt-3">Login</button>
+      </div>
     </div>
   </div>
 </template>
@@ -30,11 +36,11 @@ export default {};
 }
 .fields-wrapper {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   justify-content: center;
   position: relative;
   width: 30%;
-  height: 30%;
+  height: 40%;
   top: 30%;
   left: 35%;
   background: #eeeeee;
@@ -42,13 +48,16 @@ export default {};
 }
 
 .fields-wrapper input {
+  text-align: center;
   width: 50%;
   height: 60%;
   top: 20%;
   background: #aad8d3;
   opacity: 0.5;
-  border-radius: 50px;
+  border-radius: 10px;
+  outline: none;
 }
+
 .submit-btn {
   position: relative;
   width: 5rem;
@@ -58,7 +67,7 @@ export default {};
   border-radius: 50px;
 }
 .in {
-   display: flex;
-  flex-direction: column; 
+  display: flex;
+  flex-direction: column;
 }
 </style>
