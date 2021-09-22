@@ -14,9 +14,7 @@
           placeholder="Password"
         />
       </div>
-      <div>
-        <button class="submit-btn mt-3">Login</button>
-      </div>
+      <button class="submit-btn">Login</button>
     </div>
   </div>
 </template>
@@ -45,6 +43,7 @@ export default {};
   left: 35%;
   background: #eeeeee;
   border-radius: 65px;
+  align-items: center;
 }
 
 .fields-wrapper input {
@@ -53,21 +52,30 @@ export default {};
   height: 60%;
   top: 20%;
   background: #aad8d3;
-  opacity: 0.5;
   border-radius: 10px;
   outline: none;
+  color: black;
 }
 
 .submit-btn {
   position: relative;
-  width: 5rem;
-  height: 15%;
-  left: 40%;
+  width: 6rem;
+  height: 10%;
+  /* left: 40%; */
   background: #00adb5;
   border-radius: 50px;
+  margin-top: 2rem;
 }
 .in {
   display: flex;
   flex-direction: column;
+  width: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+  .fields-wrapper {
+    width: 40%;
+    left: 25%;
+  }
 }
 </style>
