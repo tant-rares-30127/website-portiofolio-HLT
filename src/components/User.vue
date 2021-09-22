@@ -1,12 +1,14 @@
 <template>
   <div class="user-box">
-    <div class="user-info" @click="openCV">
-      <img v-bind:src="photoSrc" alt="profileImage" height="40" />
-      <div class="text-box">
-        <p id="name">{{ name }}</p>
-        <p id="position">{{ position }}</p>
+    <a href="#">
+      <div class="user-info" @click="openCV">
+        <img v-bind:src="photoSrc" alt="profileImage" height="40" />
+        <div class="text-box">
+          <p id="name">{{ name }}</p>
+          <p id="position">{{ position }}</p>
+        </div>
       </div>
-    </div>
+    </a>
   </div>
 </template>
 
@@ -27,6 +29,10 @@ export default {
   background-color: none;
   width: 25rem;
   padding: 1.5rem;
+}
+
+.user-box a {
+  text-decoration: none;
 }
 
 .user-info {
