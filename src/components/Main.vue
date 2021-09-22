@@ -5,7 +5,7 @@
         <a class="navbar-brand ms-3" id="name" href="#">Rares</a>
       </div>
       <div class="d-flex">
-        <div class="collapse navbar-collapse me-3"  id="navbarSupportedContent"  >
+        <div class="collapse navbar-collapse me-3" id="navbarSupportedContent">
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
               <a
@@ -50,6 +50,16 @@
     <div class="about-photo">
       <img src="" alt="buna" />
     </div>
+  </div>
+  <br>
+  <br>
+  <div class="about-contact">
+      <h2>Contact</h2>
+      <br>
+    <i id="first" class="fab fa-linkedin"></i>
+    <i class="fab fa-github"></i>
+    <i class="fas fa-phone-square"></i>
+    <i class="fas fa-envelope"></i>
   </div>
 </template>
 <style>
@@ -103,7 +113,7 @@
   padding-bottom: 2%;
 }
 
-.about-text h2 {
+.about-text h2, .about-contact h2 {
   padding-right: 80%;
   font-style: normal;
   font-weight: bold;
@@ -113,7 +123,9 @@
 
   color: #23262b;
 }
-
+.about-contact h2{
+    padding-right: 85%;
+}
 .about-text h3 {
   color: #23262b;
 
@@ -122,22 +134,29 @@
   font-size: 24px;
   line-height: 28px;
   text-align: center;
+  padding-right: 11%;
 }
 
 .about-photo {
   background-color: grey;
-  padding-right:10%;
-  margin-left:10%;
-  margin-right:10%;
+  padding-right: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .about {
   display: flex;
   justify-content: space-around;
-  padding-top:3%
+  padding-top: 3%;
 }
 
 .navbar {
   background-color: #23262b;
+}
+
+.about-contact i {
+    font-size: 3rem;
+    padding-left: 2.2%;
+   
 }
 </style>
