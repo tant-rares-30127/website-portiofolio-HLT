@@ -33,6 +33,24 @@
     </div>
   </nav>
 
+  <div class="about">
+    <div class="about-text">
+      <br />
+      <br />
+      <br />
+      <h2>About</h2>
+      <br />
+      <br />
+
+      <h3>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text
+      </h3>
+    </div>
+    <div class="about-photo">
+      <img src="" alt="buna" />
+    </div>
+  </div>
 </template>
 <style>
 .dropdown-menu {
