@@ -56,10 +56,10 @@
   <div class="about-contact">
       <h2>Contact</h2>
       <br>
-    <i id="first" class="fab fa-linkedin"></i>
-    <i class="fab fa-github"></i>
-    <i class="fas fa-phone-square"></i>
-    <i class="fas fa-envelope"></i>
+      <a href=""><i id="first" class="fab fa-linkedin"></i></a>
+      <a href=""><i class="fab fa-github"></i></a>
+      <a href=""><i class="fas fa-phone-square"></i></a>
+      <a href=""><i class="fas fa-envelope"></i></a>
   </div>
 </template>
 <style>
@@ -157,6 +157,6 @@
 .about-contact i {
     font-size: 3rem;
     padding-left: 2.2%;
-   
+    color: black;
 }
 </style>
