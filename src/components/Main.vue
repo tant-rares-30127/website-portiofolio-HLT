@@ -51,8 +51,7 @@
       <img src="" alt="buna" />
     </div>
   </div>
-  <br>
-  <br>
+
   <div class="about-contact">
       <h2>Contact</h2>
       <br>
@@ -63,6 +62,9 @@
   </div>
 </template>
 <style>
+.about,.about-contact,br {
+    background-color: #23262b;
+}
 .dropdown-menu {
   right: auto;
   left: 60%;
@@ -121,13 +123,13 @@
   line-height: 28px;
   text-align: center;
 
-  color: #23262b;
+  color: #ffffff;
 }
 .about-contact h2{
     padding-right: 85%;
 }
 .about-text h3 {
-  color: #23262b;
+  color: #ffffff;
 
   font-style: normal;
   font-weight: bold;
@@ -151,7 +153,7 @@
 }
 
 .navbar {
-  background-color: #23262b;
+  background-color: #181a1f;
 }
 
 .about-contact i {
