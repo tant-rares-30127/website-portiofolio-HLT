@@ -15,6 +15,10 @@ background-color: #23262b;
   padding-left: 4.7%;
   padding-top: 3%;
 }
+
+.about-education h3 {
+  font-weight: lighter;
+}
 *{
     background-color: #23262b;
 }
