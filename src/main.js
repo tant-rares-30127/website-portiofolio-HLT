@@ -26,5 +26,4 @@ app.component("font-awesome-icon", FontAwesomeIcon);
 app.use(VueAxios, axios);
 //app.use(store);
 
-app.mount('#app')
-
+app.mount("#app");

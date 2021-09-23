@@ -117,6 +117,7 @@ br {
   padding-right: 10%;
   padding-top: 2%;
   padding-bottom: 2%;
+  background-color: white;
 }
 
 .about-text h2,
@@ -133,6 +134,7 @@ br {
 
 .about-contact h2 {
   padding-right: 85%;
+  padding-top: 3%;
 }
 
 .about-text h3 {
