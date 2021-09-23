@@ -1,5 +1,4 @@
 import { createApp } from "vue";
-<<<<<<< HEAD
 import App from "./App.vue";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -27,18 +26,4 @@ app.component("font-awesome-icon", FontAwesomeIcon);
 app.use(VueAxios, axios);
 //app.use(store);
 
-=======
-
-//import router from "./router";
-//import axios from "axios";
-//import VueAxios from "vue-axios";
-//import store from "./store";
-
-import App from "./App.vue";
-
-const app = createApp(App);
-//app.use(BootstrapVue);
-//app.use(VueAxios, axios);
-//app.use(store);
->>>>>>> origin/feature/#1_Select_CV_page_FE
 app.mount("#app");
