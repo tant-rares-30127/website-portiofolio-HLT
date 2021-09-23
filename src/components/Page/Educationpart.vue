@@ -21,15 +21,6 @@
 .about-education h3 {
   font-weight: lighter;
 }
-
-* {
-    background-color: #23262b;
-}
-
-
-* {
-  background-color: #23262b;
-}
 </style>
 
 <script>
