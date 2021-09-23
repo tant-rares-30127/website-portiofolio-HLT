@@ -61,6 +61,7 @@
   </div>
 </template>
 <style>
+
 .about,
 .about-contact,
 br {
@@ -139,13 +140,12 @@ br {
 
 .about-text h3 {
   color: #ffffff;
-
   font-style: normal;
-  font-weight: bold;
+  font-weight: lighter;
   font-size: 24px;
   line-height: 28px;
   text-align: center;
-  padding-right: 11%;
+  padding-left:4.7%
 }
 
 .about-photo {
@@ -167,7 +167,7 @@ br {
 
 .about-contact a {
   font-size: 3rem;
-  padding-left: 2.2%;
+  padding-left: 4.7%;
   color: black;
 }
 
