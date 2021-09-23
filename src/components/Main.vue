@@ -32,7 +32,6 @@
       </div>
     </div>
   </nav>
-
   <div class="about">
     <div class="about-text">
       <br />
@@ -41,7 +40,6 @@
       <h2>About</h2>
       <br />
       <br />
-
       <h3>
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text
@@ -51,20 +49,24 @@
       <img src="" alt="buna" />
     </div>
   </div>
-
   <div class="about-contact">
-      <h2>Contact</h2>
-      <br>
+    <h2>Contact</h2>
+    <br />
+    <div class="about-contact-i">
       <a href=""><i id="first" class="fab fa-linkedin"></i></a>
       <a href=""><i class="fab fa-github"></i></a>
       <a href=""><i class="fas fa-phone-square"></i></a>
       <a href=""><i class="fas fa-envelope"></i></a>
+    </div>
   </div>
 </template>
 <style>
-.about,.about-contact,br {
-    background-color: #23262b;
+.about,
+.about-contact,
+br {
+  background-color: #23262b;
 }
+
 .dropdown-menu {
   right: auto;
   left: 60%;
@@ -72,6 +74,7 @@
   -o-transform: translate(-50%, 0);
   transform: translate(-70%, 0);
 }
+
 #name {
   font-size: 2rem;
   color: white;
@@ -89,6 +92,7 @@
 #navbarDropdown {
   color: white;
 }
+
 .d-flex a {
   font-size: 1.5rem;
 }
@@ -115,7 +119,8 @@
   padding-bottom: 2%;
 }
 
-.about-text h2, .about-contact h2 {
+.about-text h2,
+.about-contact h2 {
   padding-right: 80%;
   font-style: normal;
   font-weight: bold;
@@ -125,9 +130,11 @@
 
   color: #ffffff;
 }
-.about-contact h2{
-    padding-right: 85%;
+
+.about-contact h2 {
+  padding-right: 85%;
 }
+
 .about-text h3 {
   color: #ffffff;
 
@@ -156,9 +163,17 @@
   background-color: #181a1f;
 }
 
-.about-contact i {
-    font-size: 3rem;
-    padding-left: 2.2%;
-    color: black;
+.about-contact a {
+  font-size: 3rem;
+  padding-left: 2.2%;
+  color: black;
+}
+
+.about-contact a:hover {
+  color: #00adb5;
+}
+
+.about-contact-i {
+  padding-left: 3%;
 }
 </style>
