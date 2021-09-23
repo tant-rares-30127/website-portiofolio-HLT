@@ -4,9 +4,11 @@
     <h3>{{ textEducation }}</h3>
   </div>
 </template>
+
 <style>
-.about-education h2, .about-education h3{
-background-color: #23262b;
+.about-education h2,
+.about-education h3 {
+  background-color: #23262b;
   color: #ffffff;
   font-style: normal;
   font-weight: bold;
@@ -15,16 +17,18 @@ background-color: #23262b;
   padding-left: 4.7%;
   padding-top: 3%;
 }
-*{
-    background-color: #23262b;
-}
 
+* {
+  background-color: #23262b;
+}
 </style>
+
 <script>
 export default {
   data() {
     return {
-      textEducation: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text',
+      textEducation:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text",
     };
   },
 };
