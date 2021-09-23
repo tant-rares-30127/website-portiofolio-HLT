@@ -2,12 +2,14 @@
     <WhoIAm></WhoIAm>
     <Educationpart></Educationpart>
     <WorkExperience></WorkExperience>
+    <Languages></Languages>
 </template>
 
 <script>
 import WhoIAm from "../Page/WhoIAm.vue";
 import Educationpart from "../Page/Educationpart.vue";
 import WorkExperience from "../Page/WorkExperience.vue";
+import Languages from "../Page/Languages.vue";
 
 export default {
   name: "App",
@@ -15,6 +17,7 @@ export default {
     WhoIAm,
     Educationpart,
     WorkExperience,
+    Languages
   },
 };
 </script>
