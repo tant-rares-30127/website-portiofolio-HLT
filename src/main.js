@@ -11,10 +11,20 @@ import { far } from "@fortawesome/free-regular-svg-icons";
 import { dom } from "@fortawesome/fontawesome-svg-core";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
+//import router from "./router";
+import axios from "axios";
+import VueAxios from "vue-axios";
+//import store from "./store";
+
 library.add(faBars);
 library.add(fas, fab, far);
 dom.watch();
 
 const app = createApp(App);
 app.component("font-awesome-icon", FontAwesomeIcon);
-app.mount("#app");
+
+app.use(VueAxios, axios);
+//app.use(store);
+
+app.mount('#app')
+
