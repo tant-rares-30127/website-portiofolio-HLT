@@ -31,7 +31,7 @@
 }
 
 .about-whatido table {
-      margin-left: auto;
+  margin-left: auto;
   margin-right: auto;
   width: 50%;
   column-gap: 500px;
