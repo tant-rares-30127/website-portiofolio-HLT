@@ -48,13 +48,13 @@
   border-collapse: collapse;
 }
 
-td,
-th {
+.about-languages td,
+.about-languages th {
   background-color: #eeeeee;
   padding: 10px;
 }
 
-th {
+.about-languages tr {
     text-align: center;
     padding-left:22%;
 }

@@ -4,6 +4,7 @@
     <WorkExperience></WorkExperience>
     <Languages></Languages>
     <WhatIDo></WhatIDo>
+    <Projects></Projects>
 </template>
 
 <script>
@@ -12,6 +13,7 @@ import Educationpart from "../Page/Educationpart.vue";
 import WorkExperience from "../Page/WorkExperience.vue";
 import Languages from "../Page/Languages.vue";
 import WhatIDo from "../Page/WhatIDo";
+import Projects from "../Page/Projects";
 
 export default {
   name: "App",
@@ -20,7 +22,8 @@ export default {
     Educationpart,
     WorkExperience,
     Languages,
-    WhatIDo
+    WhatIDo,
+    Projects
   },
 };
 </script>
