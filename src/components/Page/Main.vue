@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import  WhoIAm from "../Page/WhoIAm.vue";
+import WhoIAm from "../Page/WhoIAm.vue";
 import Educationpart from "../Page/Educationpart.vue";
 import WorkExperience from "../Page/WorkExperience.vue";
 
@@ -19,4 +19,3 @@ export default {
 };
 </script>
 
-<style></style>
