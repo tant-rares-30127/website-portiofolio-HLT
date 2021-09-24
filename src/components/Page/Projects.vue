@@ -12,7 +12,7 @@
       </thead>
       <tbody>
         <tr>
-          <td>...........</td>
+          <td>{{ project }}</td>
         </tr>
       </tbody>
     </table>
@@ -50,3 +50,13 @@
   padding-left: 22%;
 }
 </style>
+
+<script>
+export default {
+  data() {
+    return {
+      project: 'Short description',
+    };
+  },
+};
+</script>
