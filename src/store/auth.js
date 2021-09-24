@@ -1,49 +1,55 @@
 import axios from "axios";
 
 export default {
+  namespaced: true,
   state: {
     token: null,
     user: {
       username: "",
+      password: "",
     },
   },
 
-  getters: {},
+  getters: {
+    loggedUser(state) {
+      return state.user;
+    },
+  },
 
   mutations: {
     auth_success(state, user) {
       state.status = "success";
       state.user = user;
     },
+    setUser(state, payload) {
+      console.log("set username");
+      state.user.username = payload.username;
+      state.user.password = payload.password;
+    },
   },
 
   actions: {
-    async signIn() {
+    async signIn(context, payload) {
       axios
-
-        .post("https://localhost:5001/api/Login",{
-          "username":"Tant",
-          "password":"1234",
+        .post("https://localhost:5001/api/Login", {
+          username: payload.username,
+          password: payload.password,
         })
-
         .then((response) => {
           return response.data;
         })
-
         .catch((error) => {
           console.log(error);
         })
-
         .then((data) => {
           this.inputs = data;
           console.log(data);
+          context.commit("setUser", {
+            username: payload.username,
+            password: payload.password,
+          });
+          console.log(this.state.user);
         });
-
-      // let response = await axios.get('https://localhost:5001/api/Login', {
-      //   username: "Tant",
-      //   password: "1234",
-      // });
-      // console.log(response.data);
     },
     login({ commit }, user) {
       return new Promise((resolve, reject) => {

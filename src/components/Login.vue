@@ -4,7 +4,7 @@
       <div class="fields-wrapper">
         <div class="in align-items-center">
           <label class="p-3" for="username"><strong>Username</strong></label>
-          <input type="text" placeholder="Username" />
+          <input type="text" placeholder="Username" v-model="username" />
         </div>
 
         <div class="in align-items-center">
@@ -13,6 +13,7 @@
             type="text"
             style="-webkit-text-security: disc"
             placeholder="Password"
+            v-model="password"
           />
         </div>
         <button class="submit-btn">Login</button>
@@ -24,31 +25,34 @@
 <script>
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
-import { mapActions } from "vuex";
 
 export default {
-
-  name:'signin',
-  components:{
+  name: "signin",
+  components: {
     //
   },
-  data(){
-    return{
-      form:{
-        username:'',
-        password:'',
-      }
-    }
+  data() {
+    return {
+      form: {
+        username: "",
+        password: "",
+      },
+    };
   },
-  methods:{
-    ...mapActions({
-      signIn: 'signIn'
-    }),
-    submit(){
-      this.signIn(this.form)
-
-    }
-  }
+  methods: {
+    async submit() {
+      const actionPayload = {
+        username: this.username,
+        password: this.password,
+      };
+      await this.$store.dispatch("auth/signIn", actionPayload);
+      this.getUser();
+    },
+    getUser() {
+      setTimeout(console.log("user from login"), 20000);
+      setTimeout(console.log(this.$store.getters["auth/loggedUser"]), 20000);
+    },
+  },
 };
 </script>
 

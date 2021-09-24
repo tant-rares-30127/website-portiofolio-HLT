@@ -1,7 +1,6 @@
-
 import auth from "./auth";
+import cvdata from "./cvdata";
 import { createStore } from "vuex";
-
 
 export default new createStore({
   state: {},
@@ -10,6 +9,7 @@ export default new createStore({
 
   modules: {
     //registering the auth module that is imported
-    auth,
+    auth: auth,
+    cvdata: cvdata,
   },
 });
