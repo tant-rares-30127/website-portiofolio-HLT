@@ -14,15 +14,15 @@
           <th>
             <div class="progress-bar">
               <circle-progress
-                :show-percent="true"
-                :viewport="true"
-                :percent="percent"
-                :is-gradient="true"
-                :gradient="{
+                :show-percent='true'
+                :viewport='true'
+                :percent='percent'
+                :is-gradient='true'
+                :gradient='{
                   angle: 90,
-                  startColor: '#00adb5',
-                  stopColor: '#003336',
-                }"
+                  startColor: "#00adb5",
+                  stopColor: "#003336",
+                }'
                 show-percent:true
               />
             </div>
@@ -34,14 +34,15 @@
 </template>
 
 <script>
-import "vue3-circle-progress/dist/circle-progress.css";
-import CircleProgress from "vue3-circle-progress";
+import 'vue3-circle-progress/dist/circle-progress.css';
+import CircleProgress from 'vue3-circle-progress';
+
 export default {
   components: { CircleProgress },
   data() {
     return {
       percent: 80,
-      skill: "HTML",
+      skill: 'HTML',
     };
   },
 };
@@ -51,11 +52,13 @@ export default {
 .table-skills p {
   color: #ffffff;
 }
+
 .table-skills {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
+
 .progress-bar {
   background-color: #23262b;
 }
