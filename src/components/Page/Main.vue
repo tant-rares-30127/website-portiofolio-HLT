@@ -18,7 +18,7 @@ import Projects from "../Page/Projects";
 import Skills from "../Page/Skills";
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     WhoIAm,
     Educationpart,
@@ -31,4 +31,3 @@ export default {
 };
 </script>
 
-<style></style>
