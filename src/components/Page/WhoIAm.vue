@@ -171,11 +171,7 @@ br {
   color: black;
 }
 
-.about-contact a:hover {
-  color: #00adb5;
-}
-
-.about-contact-i {
-  padding-left: 3%;
+.about-contact i:hover {
+  color:#00adb5;
 }
 </style>
