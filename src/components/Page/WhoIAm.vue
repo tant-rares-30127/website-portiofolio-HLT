@@ -32,7 +32,6 @@
       </div>
     </div>
   </nav>
-
   <div class="about">
     <div class="about-text">
       <br />
@@ -50,14 +49,15 @@
       <img src="" alt="buna" />
     </div>
   </div>
-
   <div class="about-contact">
     <h2>Contact</h2>
     <br />
-    <a href=""><i id="first" class="fab fa-linkedin"></i></a>
-    <a href=""><i class="fab fa-github"></i></a>
-    <a href=""><i class="fas fa-phone-square"></i></a>
-    <a href=""><i class="fas fa-envelope"></i></a>
+    <div class="about-contact-i">
+      <a href=""><i id="first" class="fab fa-linkedin"></i></a>
+      <a href=""><i class="fab fa-github"></i></a>
+      <a href=""><i class="fas fa-phone-square"></i></a>
+      <a href=""><i class="fas fa-envelope"></i></a>
+    </div>
   </div>
 </template>
 <style>
@@ -67,6 +67,7 @@
 br {
   background-color: #23262b;
 }
+
 .dropdown-menu {
   right: auto;
   left: 60%;
@@ -74,6 +75,7 @@ br {
   -o-transform: translate(-50%, 0);
   transform: translate(-70%, 0);
 }
+
 #name {
   font-size: 2rem;
   color: white;
@@ -91,6 +93,7 @@ br {
 #navbarDropdown {
   color: white;
 }
+
 .d-flex a {
   font-size: 1.5rem;
 }
@@ -129,10 +132,12 @@ br {
 
   color: #ffffff;
 }
+
 .about-contact h2 {
   padding-right: 85%;
   padding-top: 3%;
 }
+
 .about-text h3 {
   color: #ffffff;
   font-style: normal;
@@ -156,9 +161,21 @@ br {
   padding-top: 3%;
 }
 
-.about-contact i {
+.navbar {
+  background-color: #181a1f;
+}
+
+.about-contact a {
   font-size: 3rem;
   padding-left: 4.7%;
   color: black;
+}
+
+.about-contact a:hover {
+  color: #00adb5;
+}
+
+.about-contact-i {
+  padding-left: 3%;
 }
 </style>
