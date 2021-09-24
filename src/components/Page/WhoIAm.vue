@@ -161,4 +161,8 @@ br {
   padding-left: 4.7%;
   color: black;
 }
+
+.about-contact i:hover {
+  color:#00adb5;
+}
 </style>
