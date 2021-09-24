@@ -35,6 +35,7 @@
   margin-right: auto;
   width: 50%;
   column-gap: 500px;
+  text-align: center;
 }
 </style>
 
