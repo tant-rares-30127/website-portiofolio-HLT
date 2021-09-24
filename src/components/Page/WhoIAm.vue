@@ -61,7 +61,6 @@
   </div>
 </template>
 <style>
-
 .about,
 .about-contact,
 br {
@@ -129,7 +128,6 @@ br {
   font-size: 24px;
   line-height: 28px;
   text-align: center;
-
   color: #ffffff;
 }
 
@@ -145,7 +143,7 @@ br {
   font-size: 24px;
   line-height: 28px;
   text-align: center;
-  padding-left:4.7%
+  padding-left: 4.7%;
 }
 
 .about-photo {
@@ -162,7 +160,7 @@ br {
 }
 
 .navbar {
-  background-color: #181a1f;
+  background-color: #23262b;
 }
 
 .about-contact a {
@@ -172,6 +170,6 @@ br {
 }
 
 .about-contact i:hover {
-  color:#00adb5;
+  color: #00adb5;
 }
 </style>
