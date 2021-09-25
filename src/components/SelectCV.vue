@@ -1,7 +1,7 @@
 <template>
   <div class="select-cv-page">
     <div class="navbar">
-      <button class="login">Log in</button>
+      <button class="login" @click="goToLogin">Log in</button>
     </div>
     <div class="content">
       <div class="select-cv-area">
@@ -13,6 +13,7 @@
           :position="user.position"
           :photoSrc="user.photoSrc"
           class="user-item"
+          @click="getCVData(user.id - 1)"
         ></user>
       </div>
     </div>
@@ -53,6 +54,20 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    async getCVData(currentId) {
+      const actionPayload = {
+        username: "Teona",
+        password: "2222",
+      };
+      await this.$store.dispatch("auth/signIn", actionPayload);
+      await this.$store.dispatch("cvdata/getCVForSelectedUser", currentId);
+    },
+    goToLogin() {
+      console.log(this.$store.getters["auth/loggedUser"]);
+      console.log(this.$store.getters["cvdata/getAllCVData"]);
+    },
   },
 };
 </script>
