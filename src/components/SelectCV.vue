@@ -1,7 +1,9 @@
 <template>
   <div class="select-cv-page">
     <div class="navbar">
-      <button class="login" @click="goToLogin">Log in</button>
+      <button class="login" @click="$router.push('/login')">
+        Log in
+      </button>
     </div>
     <div class="content">
       <div class="select-cv-area">
@@ -63,10 +65,6 @@ export default {
       };
       await this.$store.dispatch("auth/signIn", actionPayload);
       await this.$store.dispatch("cvdata/getCVForSelectedUser", currentId);
-    },
-    goToLogin() {
-      console.log(this.$store.getters["auth/loggedUser"]);
-      console.log(this.$store.getters["cvdata/getAllCVData"]);
     },
   },
 };

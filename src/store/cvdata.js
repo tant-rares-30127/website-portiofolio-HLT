@@ -6,6 +6,7 @@ export default {
   namespaced: true,
   state() {
     return {
+      currentId: "",
       currentCV: {
         id: "",
         introduction: "",
@@ -30,6 +31,10 @@ export default {
   mutations: {
     setCurrentCV(state, payload) {
       state.currentCV = payload;
+      state.currentId = payload.Id;
+    },
+    setCurrentId(state, payload) {
+      state.currentId = payload;
     },
   },
   actions: {
@@ -52,6 +57,9 @@ export default {
   getters: {
     getAllCVData(state) {
       return state.currentCV;
+    },
+    getCurrentId(state) {
+      return state.currentId;
     },
   },
 };
