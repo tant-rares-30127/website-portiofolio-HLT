@@ -2,6 +2,8 @@
   <Login></Login>
   <Main></Main>
   <SelectCV></SelectCV>
+  <Login></Login>
+  <Main></Main>
 </template>
 
 <script>
@@ -16,10 +18,16 @@ export default {
   components: {
     Login,
     Main,
-    SelectCV
-  }
+    SelectCV,
+  },
 };
 </script>
 
 <style>
+:root {
+  --dark-gray: #393e46;
+  --blue: #00adb5;
+  --light-blue: #aad8d3;
+  --light-gray: #eeeeee;
+}
 </style>
