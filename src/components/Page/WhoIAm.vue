@@ -2,7 +2,9 @@
   <nav class="navbar navbar-expand-lg navbar-light pt-4">
     <div class="container-fluid">
       <div class="navbar-name">
-        <a class="navbar-brand ms-3" id="name" href="#">{{ checkUserLogin }}</a>
+        <a class="navbar-brand ms-3" id="name" href="#" @click="logOut()">{{
+          checkUserLogin
+        }}</a>
       </div>
       <div class="d-flex">
         <div class="collapse navbar-collapse me-3" id="navbarSupportedContent">
@@ -73,6 +75,19 @@ export default {
       return this.$store.getters["auth/loggedUserId"]
         ? this.$store.getters["auth/loggedUsername"]
         : "Login";
+    },
+    methods: {
+      logOut() {
+        console.log("out 1");
+        const actionPayload = {
+          username: "",
+          password: "",
+          userId: "",
+        };
+        this.$store.dispatch("auth/logOut", actionPayload);
+        console.log("out 2");
+        //this.$router.push("/login");
+      },
     },
   },
 };

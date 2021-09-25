@@ -36,6 +36,13 @@ export default {
   },
 
   actions: {
+    logOut(context, payload) {
+      context.commit("setUser", {
+        userId: payload.userId,
+        username: payload.username,
+        password: payload.password,
+      });
+    },
     async signIn(context, payload) {
       axios
         .post("https://localhost:5001/api/Login", {

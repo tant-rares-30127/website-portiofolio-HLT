@@ -59,11 +59,11 @@ export default {
   },
   methods: {
     async getCVData(currentId) {
-      // const actionPayload = {
-      //   username: "Teona",
-      //   password: "2222",
-      // };
-      // await this.$store.dispatch("auth/signIn", actionPayload);
+      const actionPayload = {
+        username: "Teona",
+        password: "2222",
+      };
+      await this.$store.dispatch("auth/signIn", actionPayload);
       await this.$store.dispatch("cvdata/getCVForSelectedUser", currentId);
     },
   },
