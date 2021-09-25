@@ -17,6 +17,12 @@ export default {
     loggedUser(state) {
       return state.user;
     },
+    loggedUserId(state) {
+      return state.user.userId;
+    },
+    loggedUsername(state) {
+      return state.user.username;
+    },
   },
 
   mutations: {

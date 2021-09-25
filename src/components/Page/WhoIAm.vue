@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg navbar-light pt-4">
     <div class="container-fluid">
       <div class="navbar-name">
-        <a class="navbar-brand ms-3" id="name" href="#">Rares</a>
+        <a class="navbar-brand ms-3" id="name" href="#">{{ checkUserLogin }}</a>
       </div>
       <div class="d-flex">
         <div class="collapse navbar-collapse me-3" id="navbarSupportedContent">
@@ -60,6 +60,24 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      loggedUser: "",
+    };
+  },
+  computed: {
+    checkUserLogin() {
+      return this.$store.getters["auth/loggedUserId"]
+        ? this.$store.getters["auth/loggedUsername"]
+        : "Login";
+    },
+  },
+};
+</script>
+
 <style>
 .about,
 .about-contact,

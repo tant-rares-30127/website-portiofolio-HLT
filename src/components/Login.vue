@@ -16,7 +16,7 @@
             v-model="password"
           />
         </div>
-        <button class="submit-btn">Login</button>
+        <button class="submit-btn" @click="$router.push('/main')">Login</button>
       </div>
     </div>
   </form>
@@ -43,11 +43,6 @@ export default {
         password: this.password,
       };
       await this.$store.dispatch("auth/signIn", actionPayload);
-      this.getUser();
-    },
-    getUser() {
-      setTimeout(console.log("user from login"), 20000);
-      setTimeout(console.log(this.$store.getters["auth/loggedUser"]), 20000);
     },
   },
 };
