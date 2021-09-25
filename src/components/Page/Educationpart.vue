@@ -21,6 +21,10 @@
 .about-education h3 {
   font-weight: lighter;
 }
+
+.about-education {
+  background-color: var(--dark-gray);
+}
 </style>
 
 <script>

@@ -93,7 +93,7 @@ br {
   transform: translate(-70%, 0);
 }
 
-#name {
+.navbar-name #name {
   font-size: 2rem;
   color: white;
 }
@@ -187,7 +187,11 @@ br {
   color: black;
 }
 
-.about-contact i:hover {
+.about-contact a:hover {
   color: #00adb5;
+}
+
+.about-contact {
+  background-color: var(--dark-gray);
 }
 </style>

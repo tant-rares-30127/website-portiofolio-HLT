@@ -6,8 +6,8 @@
       </button>
     </div>
     <div class="content">
-      <div class="select-cv-area">
-        <user
+      <div class="select-cv-area" >
+        <user 
           v-for="user in this.users"
           :key="user.id"
           :id="user.id"

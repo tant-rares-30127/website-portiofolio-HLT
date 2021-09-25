@@ -76,4 +76,8 @@ export default {
   line-height: 28px;
   text-align: center;
 }
+
+.about-skills {
+  background-color: var(--dark-gray);
+}
 </style>

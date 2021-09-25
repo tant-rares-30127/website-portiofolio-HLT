@@ -10,7 +10,6 @@
   background-color: var(--dark-gray);
   color: #ffffff;
   font-weight: bold;
-
   font-style: normal;
   font-size: 24px;
   line-height: 28px;
@@ -19,6 +18,10 @@
 }
 .about-work h3 {
   font-weight: lighter;
+}
+
+.about-work {
+  background-color: var(--dark-gray);
 }
 </style>
 <script>

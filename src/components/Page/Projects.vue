@@ -49,6 +49,10 @@
   text-align: center;
   padding-left: 22%;
 }
+
+.about-projects {
+  background-color: var(--dark-gray);
+}
 </style>
 
 <script>

@@ -30,3 +30,9 @@ export default {
   },
 };
 </script>
+
+<style>
+#app {
+  background-color: var(--dark-gray);
+}
+</style>
