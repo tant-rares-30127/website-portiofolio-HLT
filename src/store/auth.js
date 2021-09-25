@@ -2,12 +2,14 @@ import axios from "axios";
 
 export default {
   namespaced: true,
-  state: {
-    token: null,
-    user: {
-      username: "",
-      password: "",
-    },
+  state() {
+    return {
+      token: null,
+      user: {
+        username: "",
+        password: "",
+      },
+    };
   },
 
   getters: {
@@ -22,9 +24,8 @@ export default {
       state.user = user;
     },
     setUser(state, payload) {
-      console.log("set username");
-      state.user.username = payload.username;
-      state.user.password = payload.password;
+      console.log("set user");
+      state.user = payload;
     },
   },
 
@@ -43,12 +44,10 @@ export default {
         })
         .then((data) => {
           this.inputs = data;
-          console.log(data);
           context.commit("setUser", {
             username: payload.username,
             password: payload.password,
           });
-          console.log(this.state.user);
         });
     },
     login({ commit }, user) {

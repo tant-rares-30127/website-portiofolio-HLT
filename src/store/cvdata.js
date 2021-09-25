@@ -36,7 +36,7 @@ export default {
   actions: {
     async getCVForSelectedUser(context, selectedId) {
       axios
-        .get("https://localhost:5001/api/CVData" + selectedId)
+        .get("https://localhost:5001/api/CVData/" + selectedId)
         .then((response) => {
           if (response.status) {
             return response.data;
