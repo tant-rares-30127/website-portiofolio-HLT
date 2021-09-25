@@ -6,31 +6,30 @@ export default {
   namespaced: true,
   state() {
     return {
-      currentCV: null,
-      //  {
-      //   id: null,
-      //   introduction: "",
-      //   imgSrc: "",
-      //   education: "",
-      //   workExperience: "",
-      //   languages: "",
-      //   whatIDo: "",
-      //   whatIUse: "",
-      //   projects: "",
-      //   skills: "",
-      //   contactData: {
-      //     id: null,
-      //     phoneNumber: "",
-      //     linkedIn: "",
-      //     email: "",
-      //     gitHub: "",
-      //   },
-      // },
+      currentCV: {
+        id: "",
+        introduction: "",
+        imgSrc: "",
+        education: "",
+        workExperience: "",
+        languages: "",
+        whatIDo: "",
+        whatIUse: "",
+        projects: "",
+        skills: "",
+        contactData: {
+          id: "",
+          phoneNumber: "",
+          linkedIn: "",
+          email: "",
+          gitHub: "",
+        },
+      },
     };
   },
   mutations: {
     setCurrentCV(state, payload) {
-      this.state.currentCV = payload;
+      state.currentCV = payload;
     },
   },
   actions: {
@@ -43,7 +42,7 @@ export default {
           }
         })
         .then((data) => {
-          console.log(data);
+          context.commit("setCurrentCV", data);
         })
         .catch((error) => {
           console.log(error);
@@ -51,8 +50,8 @@ export default {
     },
   },
   getters: {
-    getAllCVData() {
-      return this.state.currentCV;
+    getAllCVData(state) {
+      return state.currentCV;
     },
   },
 };

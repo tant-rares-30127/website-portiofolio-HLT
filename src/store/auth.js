@@ -24,7 +24,6 @@ export default {
       state.user = user;
     },
     setUser(state, payload) {
-      console.log("set user");
       state.user = payload;
     },
   },
