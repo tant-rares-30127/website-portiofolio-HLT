@@ -16,6 +16,7 @@
   line-height: 28px;
   padding-left: 4.7%;
   padding-top: 3%;
+  margin-bottom:0;
 }
 
 .about-education h3 {

@@ -15,6 +15,7 @@
   line-height: 28px;
   padding-left: 4.7%;
   padding-top: 3%;
+  margin-bottom: 0;
 }
 .about-work h3 {
   font-weight: lighter;
