@@ -1,17 +1,32 @@
 <template>
-  <WhoIAm></WhoIAm>
-  <Educationpart></Educationpart>
+    <WhoIAm></WhoIAm>
+    <Educationpart></Educationpart>
+    <WorkExperience></WorkExperience>
+    <Languages></Languages>
+    <WhatIDo></WhatIDo>
+    <Projects></Projects>
+    <Skills></Skills>
 </template>
 
 <script>
-import WhoIAm from "../Page/WhoIAm.vue";
+import  WhoIAm from "../Page/WhoIAm.vue";
 import Educationpart from "../Page/Educationpart.vue";
+import WorkExperience from "../Page/WorkExperience.vue";
+import Languages from "../Page/Languages.vue";
+import WhatIDo from "../Page/WhatIDo";
+import Projects from "../Page/Projects";
+import Skills from "../Page/Skills";
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     WhoIAm,
     Educationpart,
+    WorkExperience,
+    Languages,
+    WhatIDo,
+    Projects,
+    Skills,
   },
 };
 </script>
