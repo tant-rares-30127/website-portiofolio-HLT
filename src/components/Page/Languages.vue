@@ -58,6 +58,10 @@
   text-align: center;
   padding-left: 22%;
 }
+
+.about-languages {
+  background-color: var(--dark-gray);
+}
 </style>
 
 <script>

@@ -35,6 +35,10 @@
   column-gap: 500px;
   text-align: center;
 }
+
+.about-whatido {
+  background-color: var(--dark-gray);
+}
 </style>
 
 <script>
