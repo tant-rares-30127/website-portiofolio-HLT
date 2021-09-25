@@ -9,25 +9,23 @@
       </thead>
       <tbody>
         <tr>
-          <th>{{whatIDo}}</th>
-          <th>{{whatIUse}}</th>
+          <th>{{ whatIDo }}</th>
+          <th>{{ whatIUse }}</th>
         </tr>
       </tbody>
     </table>
   </div>
 </template>
 
-<style> 
-
+<style>
 .about-whatido {
-    padding-top: 5%;
+  padding-top: 5%;
 }
 .about-whatido th,
 .about-whatido td {
   padding: 30px;
-  background-color: #23262b;
+  background-color: var(--dark-gray);
   color: #ffffff;
-
 }
 
 .about-whatido table {

@@ -64,7 +64,7 @@
 .about,
 .about-contact,
 br {
-  background-color: #23262b;
+  background-color: var(--dark-gray);
 }
 
 .dropdown-menu {
@@ -160,7 +160,7 @@ br {
 }
 
 .navbar {
-  background-color: #23262b;
+  background-color: var(--dark-gray);
 }
 
 .about-contact a {

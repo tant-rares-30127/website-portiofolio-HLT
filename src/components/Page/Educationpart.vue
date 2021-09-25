@@ -8,7 +8,7 @@
 <style>
 .about-education h2,
 .about-education h3 {
-  background-color: #23262b;
+  background-color: var(--dark-gray);
   color: #ffffff;
   font-style: normal;
   font-weight: bold;

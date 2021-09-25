@@ -27,7 +27,7 @@
 
 <style>
 .about-languages h2 {
-  background-color: #23262b;
+  background-color: var(--dark-gray);
   color: #ffffff;
   font-weight: bold;
 
@@ -39,7 +39,7 @@
 }
 
 .about-languages table {
-  color: #23262b;
+  color: var(--dark-gray);
   background-color: #eeeeee;
   margin-left: auto;
   margin-right: auto;
@@ -55,8 +55,8 @@
 }
 
 .about-languages tr {
-    text-align: center;
-    padding-left:22%;
+  text-align: center;
+  padding-left: 22%;
 }
 </style>
 

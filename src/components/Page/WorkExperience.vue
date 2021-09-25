@@ -7,7 +7,7 @@
 <style>
 .about-work h2,
 .about-work h3 {
-  background-color: #23262b;
+  background-color: var(--dark-gray);
   color: #ffffff;
   font-weight: bold;
 
@@ -19,10 +19,6 @@
 }
 .about-work h3 {
   font-weight: lighter;
-}
-
-* {
-  background-color: #23262b;
 }
 </style>
 <script>

@@ -21,7 +21,7 @@
 
 <style>
 .about-projects h2 {
-  background-color: #23262b;
+  background-color: var(--dark-gray);
   color: #ffffff;
   font-weight: bold;
   font-style: normal;
@@ -55,7 +55,7 @@
 export default {
   data() {
     return {
-      project: 'Short description',
+      project: "Short description",
     };
   },
 };
