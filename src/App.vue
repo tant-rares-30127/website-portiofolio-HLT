@@ -1,4 +1,6 @@
 <template>
+  <Login></Login>
+  <Main></Main>
   <SelectCV></SelectCV>
   <Login></Login>
   <Main></Main>
