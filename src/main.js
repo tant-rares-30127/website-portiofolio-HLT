@@ -1,4 +1,5 @@
 import { createApp } from "vue";
+import { createWebHistory, createRouter } from "vue-router";
 
 import store from "./store";
 import axios from "axios";
@@ -14,17 +15,36 @@ import { far } from "@fortawesome/free-regular-svg-icons";
 import { dom } from "@fortawesome/fontawesome-svg-core";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-import store from "./store";
-import axios from "axios";
-import VueAxios from "vue-axios";
-
 library.add(faBars);
 library.add(fas, fab, far);
 dom.watch();
+import Main from "./components/Main.vue";
+import SelectCV from "./components/SelectCV.vue";
+import Login from "./components/Login.vue";
 
+//import 'es6-promise/auto'
+const routes = [
+  {
+    path: "/",
+    component: SelectCV,
+  },
+  {
+    path: "/main",
+    component: Main,
+  },
+  {
+    path: "/login",
+    component: Login,
+  },
+];
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+});
 const app = createApp(App);
 app.component("font-awesome-icon", FontAwesomeIcon);
 
+app.use(router);
 app.use(store);
 app.use(VueAxios, axios);
 

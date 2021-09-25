@@ -6,6 +6,7 @@ export default {
     return {
       token: null,
       user: {
+        userId: "",
         username: "",
         password: "",
       },
@@ -44,6 +45,7 @@ export default {
         .then((data) => {
           this.inputs = data;
           context.commit("setUser", {
+            userId: data.id,
             username: payload.username,
             password: payload.password,
           });

@@ -28,9 +28,6 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 
 export default {
   name: "signin",
-  components: {
-    //
-  },
   data() {
     return {
       form: {

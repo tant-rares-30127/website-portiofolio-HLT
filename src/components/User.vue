@@ -1,7 +1,7 @@
 <template>
   <div class="user-box">
     <a href="#">
-      <div class="user-info" @click="openCV">
+      <div class="user-info" @click="$router.push('/main')">
         <img v-bind:src="photoSrc" alt="profileImage" height="40" />
         <div class="text-box">
           <p id="name">{{ name }}</p>
@@ -15,11 +15,6 @@
 <script>
 export default {
   props: ["id", "name", "position", "photoSrc"],
-  methods: {
-    openCV() {
-      console.log("the user selected has the id: " + this.id);
-    },
-  },
 };
 </script>
 
