@@ -9,12 +9,16 @@
       <Form @submit="handleLogin" :validation-schema="schema">
         <div class="form-group">
           <label for="username">Username</label>
-          <Field  name="username" type="text" class="form-control input-field" />
+          <Field name="username" type="text" class="form-control input-field" />
           <ErrorMessage name="username" class="error-feedback" />
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <Field  name="password" type="password" class="form-control input-field" />
+          <Field
+            name="password"
+            type="password"
+            class="form-control input-field"
+          />
           <ErrorMessage name="password" class="error-feedback" />
         </div>
 
@@ -128,7 +132,7 @@ label {
   border-radius: 50%;
 }
 
-.input-field{
+.input-field {
   background: #aad8d3;
 }
 .submit-btn {
