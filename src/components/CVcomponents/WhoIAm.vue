@@ -35,7 +35,7 @@ export default {
 
 <style>
 .about {
-  margin-top: 500px;
+  margin-top: 700px;
   margin-left: 50px;
   color: white;
   display: flex;

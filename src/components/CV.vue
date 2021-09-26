@@ -2,14 +2,14 @@
   <div class="select-cv-page">
     <!-- <navbar></navbar> -->
     <div class="navbar">
-      <div v-if="!currentUser" class="navbar-nav ml-auto">
+      <div v-if="!currentUser" class="navbar-nav">
         <li class="nav-item">
           <button class="login" @click="$router.push('/login')">
             <font-awesome-icon icon="sign-in-alt" /> Login
           </button>
         </li>
       </div>
-      <div v-if="currentUser" class="navbar-nav ml-auto">
+      <div v-if="currentUser" class="navbar-nav">
         <li class="nav-item d-inline-flex">
           <div class="login d-inline-flex" @click="$router.push('')">
             <div>
@@ -28,7 +28,7 @@
         </li>
       </div>
     </div>
-    <div class="content">
+    <div class="content-cv">
       <WhoIAm
         :user="this.user"
         :imgSrc="imgPath + this.currentCV.imgSrc"
@@ -112,7 +112,6 @@ export default {
   padding: 0;
   box-sizing: border-box;
   height: 100vh;
-  /* overflow: hidden; */
 }
 
 .navbar {
@@ -136,7 +135,7 @@ export default {
   cursor: pointer;
 }
 
-.content {
+.content-cv {
   display: flex;
   flex-direction: column;
   justify-content: center;

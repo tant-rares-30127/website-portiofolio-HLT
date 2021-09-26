@@ -3,13 +3,13 @@
     <!-- <navbar></navbar> -->
     <div class="navbar_login">
       <div v-if="!currentUser" class="navbar-nav ml-auto">
-        <button class="login" @click="$router.push('/login')">
+        <button class="login-home" @click="$router.push('/login')">
           <font-awesome-icon icon="sign-in-alt" /> Login
         </button>
       </div>
       <div v-if="currentUser" class="navbar-nav ml-auto">
         <li class="nav-item d-inline-flex">
-          <div class="login d-inline-flex" @click="$router.push('')">
+          <div class="login-name d-inline-flex" @click="$router.push('')">
             <div>
               <font-awesome-icon icon="user" />
             </div>
@@ -20,13 +20,13 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" @click.prevent="logOut">
+          <a class="nav-link-home" @click.prevent="logOut">
             <font-awesome-icon icon="sign-out-alt" /> LogOut
           </a>
         </li>
       </div>
     </div>
-    <div class="content">
+    <div class="content-home">
       <div class="select-cv-area">
         <cvs
           v-for="cv in this.cvs"
@@ -69,7 +69,6 @@ export default {
     },
   },
   methods: {
-    getById() {},
     getAllCVs() {
       this.loading = true;
 
@@ -121,12 +120,26 @@ export default {
   padding: 0;
   box-sizing: border-box;
   height: 100vh;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   margin-bottom: 0px;
 }
 
+.nav-link-home {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.login-name {
+  color: white;
+  font-size: 24px;
+  right: 85%;
+  font-weight: bold;
+  border: none;
+  background: none;
+  position: absolute;
+}
 
 .navbar_login {
   display: flex;
@@ -134,7 +147,7 @@ export default {
   justify-content: end;
 }
 
-.login {
+.login-home {
   color: white;
   font-size: 24px;
   font-weight: bold;
@@ -150,7 +163,7 @@ export default {
   cursor: pointer;
 }
 
-.content {
+.content-home {
   display: flex;
   flex-direction: column;
   justify-content: center;
