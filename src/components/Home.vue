@@ -69,7 +69,6 @@ export default {
     },
   },
   methods: {
-    getById() {},
     getAllCVs() {
       this.loading = true;
 
@@ -121,12 +120,10 @@ export default {
   padding: 0;
   box-sizing: border-box;
   height: 100vh;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   margin-bottom: 0px;
 }
-
 
 .navbar_login {
   display: flex;
