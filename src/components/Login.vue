@@ -68,17 +68,16 @@ export default {
   },
   created() {
     if (this.loggedIn) {
-      this.$router.push("");
+      this.$router.push("/");
     }
   },
   methods: {
     handleLogin(user) {
-      let that = this;
       this.loading = true;
 
       this.$store.dispatch("auth/login", user).then(
         () => {
-          that.$router.push("");
+          this.$router.push("/");
         },
         (error) => {
           this.loading = false;

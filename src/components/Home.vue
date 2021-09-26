@@ -66,13 +66,11 @@ export default {
   },
   methods: {
     getAllCVs() {
-      let that = this;
       this.loading = true;
 
       this.$store.dispatch("cvs/getAll").then(
         () => {
-          that.cvs = that.$store.state.cvs.cvs;
-          that.cvs
+          this.cvs = this.$store.state.cvs.cvs;
         },
         (error) => {
           this.loading = false;
