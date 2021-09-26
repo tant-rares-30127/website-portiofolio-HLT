@@ -1,7 +1,7 @@
 <template>
   <div class="cv-box">
     <a href="#">
-      <div class="cv-info" @click="$router.push(`/cv/${id}`)">
+      <div class="cv-info" >
         <img :src="imgSrc" alt="profileImage" />
         <div class="text-box">
           <p id="firstName">{{ firstName }}</p>
@@ -20,7 +20,7 @@ export default {
 
 <style>
 .cv-box {
-  font: roboto;
+  font: 'roboto';
   background-color: none;
   width: 25rem;
   padding: 1.5rem;

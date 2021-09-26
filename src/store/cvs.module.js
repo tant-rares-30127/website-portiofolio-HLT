@@ -17,9 +17,9 @@ export const cvs = {
     },
     getById({ commit }, id) {
       return CVsService.getById(id).then(
-        (cvs) => {
-          commit("cvsByIdSuccess", cvs);
-          return Promise.resolve(cvs);
+        (cv) => {
+          commit("cvsByIdSuccess", cv);
+          return Promise.resolve(cv);
         },
         (error) => {
           commit("cvsByIdFailure");
@@ -35,11 +35,11 @@ export const cvs = {
     cvsAllFailure(state) {
       state.cvs = null;
     },
-    cvsByIdSuccess(state, cvs) {
-      state.cvs = cvs;
+    cvsByIdSuccess(state, cv) {
+      state.currentCV = cv;
     },
     cvsByIdFailure(state) {
-      state.cvs = null;
+      state.currentCV = null;
     },
   },
 };

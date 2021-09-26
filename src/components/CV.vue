@@ -29,39 +29,38 @@
       </div>
     </div>
     <div class="content">
-      <div class="select-cv-area">
-        <cvs
-          v-for="cv in this.cvs"
-          :key="cv.id"
-          :id="cv.id"
-          :firstName="cv.user.firstName"
-          :lastName="cv.user.lastName"
-          :imgSrc="imgPath + cv.imgSrc"
-          class="user-item"
-          @click="getById(cv.id)"
-        ></cvs>
-      </div>
+      <WhoIAm 
+        :user="this.user"
+        :imgSrc="imgPath + this.currentCV.imgSrc"
+        :introduction="this.currentCV.introduction"
+      ></WhoIAm>
     </div>
   </div>
 </template>
 
 <script>
-import Cvs from "./CVs.vue";
 import variables from "../../variables";
-//import Navbar from "./Navbar.vue";
+import WhoIAm from "./CVcomponents/WhoIAm.vue";
 
 export default {
   name: "Home",
-  components: { Cvs },
+  components: {
+    WhoIAm
+  },
   data() {
     return {
       imgPath: variables.IMG_URL,
-      cvs: ""
+      currentCV: [],
+      user:{
+        firstName:'' ,
+        lastName: '',
+      },
+    
     };
   },
   mounted() {
     this.loading = true;
-    this.getAllCVs();
+    this.getCVFromStore();
   },
   computed: {
     currentUser() {
@@ -71,41 +70,10 @@ export default {
     }
   },
   methods: {
-    getAllCVs() {
+    getCVFromStore() {
       this.loading = true;
-
-      this.$store.dispatch("cvs/getAll").then(
-        () => {
-          this.cvs = this.$store.state.cvs.cvs;
-        },
-        error => {
-          this.loading = false;
-          this.message =
-            (error.response &&
-              error.response.data &&
-              error.response.data.message) ||
-            error.message ||
-            error.toString();
-        }
-      );
-    },
-    getById(id) {
-      this.loading = true;
-
-      this.$store.dispatch("cvs/getById", id).then(
-        () => {
-          this.$router.push("/cv");
-        },
-        error => {
-          this.loading = false;
-          this.message =
-            (error.response &&
-              error.response.data &&
-              error.response.data.message) ||
-            error.message ||
-            error.toString();
-        }
-      );
+      this.currentCV = this.$store.state.cvs.currentCV;
+      this.user=this.$store.state.cvs.currentCV.user;
     },
     logOut() {
       this.$store.dispatch("auth/logout");
