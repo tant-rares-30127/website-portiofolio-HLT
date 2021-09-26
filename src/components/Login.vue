@@ -45,7 +45,6 @@
 <script>
 import { Form, Field, ErrorMessage } from "vee-validate";
 import * as yup from "yup";
-import CVsService from "../services/cvs.service.js";
 
 export default {
   name: "Login",
@@ -82,10 +81,6 @@ export default {
 
       this.$store.dispatch("auth/login", user).then(
         () => {
-          CVsService.getById(1).then((response) => {
-            this.content = response;
-            console.log(response);
-          });
           this.$router.push("/");
         },
         (error) => {

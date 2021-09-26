@@ -1,11 +1,11 @@
 <template>
-  <div class="user-box">
+  <div class="cv-box">
     <a href="#">
-      <div class="user-info" @click="$router.push('/main')">
-        <img v-bind:src="photo" alt="profileImage" height="40" />
+      <div class="cv-info" @click="$router.push(`/cv/${id}`)">
+        <img :src="imgSrc" alt="profileImage" />
         <div class="text-box">
-          <p id="name">{{ firstName + " " + lastName }}</p>
-          <p id="position">Developer</p>
+          <p id="firstName">{{ firstName }}</p>
+          <p id="lastName">{{ lastName }}</p>
         </div>
       </div>
     </a>
@@ -13,30 +13,24 @@
 </template>
 
 <script>
-import photo from "../assets/logo.png";
 export default {
-  props: ["id", "firstName", "lastName", "photoSrc"],
-  data() {
-    return {
-      photo: photo,
-    };
-  },
+  props: ["id", "firstName", "lastName", "imgSrc"],
 };
 </script>
 
 <style>
-.user-box {
+.cv-box {
   font: roboto;
   background-color: none;
   width: 25rem;
   padding: 1.5rem;
 }
 
-.user-box a {
+.cv-box a {
   text-decoration: none;
 }
 
-.user-info {
+.cv-info {
   font: roboto;
   background-color: var(--light-gray);
   width: 23rem;
@@ -45,7 +39,7 @@ export default {
   flex-direction: row;
   border-radius: 30px;
 }
-.user-box img {
+.cv-box img {
   width: 4.75em;
   height: 4.75em;
   margin: 5%;
