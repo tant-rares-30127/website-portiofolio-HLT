@@ -15,7 +15,6 @@
           :position="user.position"
           :photoSrc="user.photoSrc"
           class="user-item"
-          @click="getCVData(user.id - 1)"
         ></user>
       </div>
     </div>
@@ -23,7 +22,7 @@
 </template>
 
 <script>
-import photo from "../assets/person-icon.png";
+import photo from "../assets/logo.png";
 import User from "../components/User.vue";
 export default {
   components: { User },

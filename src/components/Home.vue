@@ -35,7 +35,7 @@
           :id="cv.id"
           :firstName="cv.user.firstName"
           :lastName="cv.user.lastName"
-          :photoSrc="cv.photoSrc"
+          :photoSrc="cv.user.photoSrc"
           class="user-item"
           @click="getById(cv.id)"
         ></user>
@@ -71,13 +71,12 @@ export default {
       console.log(currentId);
     },
     getAllCVs() {
-      let that = this;
       this.loading = true;
 
       this.$store.dispatch("cvs/getAll").then(
         () => {
-          that.cvs = that.$store.state.cvs.cvs;
-          that.cvs;
+          this.cvs = this.$store.state.cvs.cvs;
+          this.cvs;
         },
         (error) => {
           this.loading = false;

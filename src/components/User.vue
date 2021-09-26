@@ -2,10 +2,10 @@
   <div class="user-box">
     <a href="#">
       <div class="user-info" @click="$router.push('/main')">
-        <img v-bind:src="photoSrc" alt="profileImage" height="40" />
+        <img v-bind:src="photo" alt="profileImage" height="40" />
         <div class="text-box">
-          <p id="firstName">{{ firstName }}</p>
-          <p id="lastName">{{ lastName }}</p>
+          <p id="name">{{ firstName + " " + lastName }}</p>
+          <p id="position">Developer</p>
         </div>
       </div>
     </a>
@@ -13,8 +13,14 @@
 </template>
 
 <script>
+import photo from "../assets/logo.png";
 export default {
-  props: ["id", "name", "position", "photoSrc"],
+  props: ["id", "firstName", "lastName", "photoSrc"],
+  data() {
+    return {
+      photo: photo,
+    };
+  },
 };
 </script>
 

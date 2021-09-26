@@ -5,7 +5,7 @@
         <a class="navbar-brand ms-3" id="name" href="#" @click="logOut()">{{
           checkUserLogin
         }}</a>
-      </div> 
+      </div>
       <div class="d-flex">
         <div class="collapse navbar-collapse me-3" id="navbarSupportedContent">
           <ul class="navbar-nav">
@@ -31,7 +31,7 @@
             </li>
           </ul>
         </div>
-      </div> 
+      </div>
     </div>
   </nav>
   <div class="about">
@@ -78,14 +78,12 @@ export default {
     },
     methods: {
       logOut() {
-        console.log("out 1");
         const actionPayload = {
           username: "",
           password: "",
           userId: "",
         };
         this.$store.dispatch("auth/logOut", actionPayload);
-        console.log("out 2");
         //this.$router.push("/login");
       },
     },

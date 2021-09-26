@@ -10,7 +10,6 @@ class CVsService {
   }
 
   getById(id) {
-    console.log("get by id");
     return axios.get(API_URL + id).then((response) => {
       return response.data;
     });
