@@ -1,7 +1,14 @@
 <template>
   <div class="about-education">
     <h2>Education</h2>
-    <h3>{{ textEducation }}</h3>
+    <EducationObject
+      v-for="ed in this.edList"
+      :key="ed.id"
+      :institutionName="ed.institutionName"
+      :description="ed.description"
+      :startDate="ed.startDate"
+      :endDate="ed.endDate"
+    ></EducationObject>
   </div>
 </template>
 
@@ -24,7 +31,10 @@
 </style>
 
 <script>
+import EducationObject from "./Objects/EducationObject.vue";
 export default {
+  components: { EducationObject },
+  props: ["edList"],
   data() {
     return {
       textEducation:

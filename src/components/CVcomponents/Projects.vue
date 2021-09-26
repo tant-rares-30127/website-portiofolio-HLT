@@ -1,28 +1,20 @@
 <template>
   <div class="about-projects">
     <h2>Projects</h2>
-    <table>
-      <thead>
-        <tr>
-          <img src="" alt="projects photo" />
-        </tr>
-        <tr>
-          <th>Short project description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{{ project }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <p>{{ projects }}</p>
+    <ProjectObject
+      v-for="proj in this.projList"
+      :key="this.projList.indexOf(proj)"
+      :name="proj"
+    ></ProjectObject>
+    <p>-----in project comp-------</p>
   </div>
 </template>
 
 <style>
 .about-projects h2 {
   background-color: var(--dark-gray);
-  color: #ffffff;
+  /* color: #ffffff; */
   font-weight: bold;
   font-style: normal;
   font-size: 24px;
@@ -32,7 +24,7 @@
 }
 
 .about-projects table {
-  color: #ffffff;
+  /* color: #ffffff; */
   margin-left: auto;
   margin-right: auto;
   border-radius: 1.2em;
@@ -52,11 +44,19 @@
 </style>
 
 <script>
+import ProjectObject from "./Objects/ProjectObject.vue";
 export default {
+  props: ["projects"],
+  components: { ProjectObject },
   data() {
     return {
-      project: "Short description",
+      projList: this.splitProjects,
     };
+  },
+  computed: {
+    splitProjects() {
+      return this.projects.split(",");
+    },
   },
 };
 </script>

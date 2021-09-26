@@ -39,13 +39,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      whatIDo:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text",
-      whatIUse:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text",
-    };
-  },
+  props: ["whatIDo", "whatIUse"],
 };
 </script>

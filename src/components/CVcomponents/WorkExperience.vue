@@ -1,7 +1,14 @@
 <template>
   <div class="about-work">
     <h2>Work Experience</h2>
-    <h3>{{ workExperience }}</h3>
+    <WorkExperienceObject
+      v-for="object in this.workList"
+      :key="object.id"
+      :companyName="object.companyName"
+      :position="object.position"
+      :startDate="object.startDate"
+      :endDate="object.endDate"
+    ></WorkExperienceObject>
   </div>
 </template>
 <style>
@@ -22,12 +29,9 @@
 }
 </style>
 <script>
+import WorkExperienceObject from "./Objects/WorkExperienceObject.vue";
 export default {
-  data() {
-    return {
-      workExperience:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text",
-    };
-  },
+  components: { WorkExperienceObject },
+  props: ["workList"],
 };
 </script>

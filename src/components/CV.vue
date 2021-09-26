@@ -29,11 +29,22 @@
       </div>
     </div>
     <div class="content">
-      <WhoIAm 
+      <WhoIAm
         :user="this.user"
         :imgSrc="imgPath + this.currentCV.imgSrc"
         :introduction="this.currentCV.introduction"
       ></WhoIAm>
+      <Educationpart :edList="this.currentCV.education"></Educationpart>
+      <WorkExperience
+        :workList="this.currentCV.workExperience"
+      ></WorkExperience>
+      <Languages :langList="this.currentCV.language"></Languages>
+      <WhatIDo
+        :whatIDo="this.currentCV.whatIDo"
+        :whatIUse="this.currentCV.whatIUse"
+      ></WhatIDo>
+      <Projects :projects="this.currentCV.projects"></Projects>
+      <Skills :skills="this.currentCV.skills"></Skills>
     </div>
   </div>
 </template>
@@ -41,21 +52,32 @@
 <script>
 import variables from "../../variables";
 import WhoIAm from "./CVcomponents/WhoIAm.vue";
+import Educationpart from "./CVcomponents/Educationpart.vue";
+import WorkExperience from "./CVcomponents/WorkExperience.vue";
+import Languages from "./CVcomponents/Languages.vue";
+import WhatIDo from "./CVcomponents/WhatIDo.vue";
+import Projects from "./CVcomponents/Projects.vue";
+import Skills from "./CVcomponents/Skills.vue";
 
 export default {
   name: "Home",
   components: {
-    WhoIAm
+    WhoIAm,
+    Educationpart,
+    WorkExperience,
+    Languages,
+    WhatIDo,
+    Projects,
+    Skills,
   },
   data() {
     return {
       imgPath: variables.IMG_URL,
       currentCV: [],
-      user:{
-        firstName:'' ,
-        lastName: '',
+      user: {
+        firstName: "",
+        lastName: "",
       },
-    
     };
   },
   mounted() {
@@ -67,19 +89,19 @@ export default {
       return this.$store.state.auth.user == null
         ? null
         : this.$store.state.auth.user.user;
-    }
+    },
   },
   methods: {
     getCVFromStore() {
       this.loading = true;
       this.currentCV = this.$store.state.cvs.currentCV;
-      this.user=this.$store.state.cvs.currentCV.user;
+      this.user = this.$store.state.cvs.currentCV.user;
     },
     logOut() {
       this.$store.dispatch("auth/logout");
       this.$router.push("");
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -1,27 +1,14 @@
 <template>
   <div class="about-languages">
     <h2>Languages</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Language</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Understanding</td>
-          <td>{{ grade }}</td>
-        </tr>
-        <tr>
-          <td>Speaking</td>
-          <td>{{ grade }}</td>
-        </tr>
-        <tr>
-          <td>Writing</td>
-          <td>{{ grade }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <LanguageObject
+      v-for="lang in this.langList"
+      :key="lang.id"
+      :name="lang.name"
+      :understanding="lang.understanding"
+      :speaking="lang.speaking"
+      :writing="lang.writing"
+    ></LanguageObject>
   </div>
 </template>
 
@@ -61,11 +48,9 @@
 </style>
 
 <script>
+import LanguageObject from "./Objects/LanguageObject.vue";
 export default {
-  data() {
-    return {
-      grade: "A",
-    };
-  },
+  components: { LanguageObject },
+  props: ["langList"],
 };
 </script>
