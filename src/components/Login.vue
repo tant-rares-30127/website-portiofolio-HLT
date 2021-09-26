@@ -1,20 +1,19 @@
 <template>
   <div class="col-md-12">
     <div class="card card-container">
-      <img
-        id="profile-img"
-        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-        class="profile-img-card"
-      />
       <Form @submit="handleLogin" :validation-schema="schema">
         <div class="form-group">
           <label for="username">Username</label>
-          <Field  name="username" type="text" class="form-control input-field" />
+          <Field name="username" type="text" class="form-control input-field" />
           <ErrorMessage name="username" class="error-feedback" />
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <Field  name="password" type="password" class="form-control input-field" />
+          <Field
+            name="password"
+            type="password"
+            class="form-control input-field"
+          />
           <ErrorMessage name="password" class="error-feedback" />
         </div>
 
@@ -95,52 +94,49 @@ export default {
 </script>
 
 <style scoped>
+.col-md-12 {
+  background-color: var(--dark-gray);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow: hidden;
+}
 label {
   display: block;
   margin-top: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  font-style: italic;
 }
-
 .card-container.card {
-  max-width: 350px !important;
+  max-width: 500px !important;
   padding: 40px 40px;
 }
-
 .card {
-  background-color: #393e46;
+  background-color: var(--light-gray);
   padding: 20px 25px 30px;
   margin: 0 auto 25px;
-  margin-top: 50px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  top: 20%;
+  border-radius: 25px;
 }
-
-.profile-img-card {
-  width: 96px;
-  height: 96px;
-  margin: 0 auto 10px;
-  display: block;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-}
-
-.input-field{
-  background: #aad8d3;
+.input-field {
+  background: var(--light-blue);
+  font-size: 20px;
 }
 .submit-btn {
   position: relative;
   width: 6rem;
   height: 10%;
-  /* left: 40%; */
-  background: #00adb5;
+  background: var(--blue);
   border-radius: 50px;
   margin-top: 2rem;
+  font-size: 24px;
 }
 .error-feedback {
   color: red;
+}
+.alert {
+  margin-top: 10px;
 }
 </style>

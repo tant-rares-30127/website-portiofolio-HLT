@@ -4,9 +4,9 @@
       <div class="about-photo">
         <img :src="imgSrc" alt="buna" height="300" />
       </div>
-      <h3 class="CVname">{{ user.firstName }} {{ user.lastName }}</h3>
     </div>
     <div class="right-part">
+      <h2 class="CVname">{{ user.firstName }} {{ user.lastName }}</h2>
       <div class="introduction-box">
         <h2>About</h2>
         <p>{{ introduction }}</p>
@@ -35,7 +35,7 @@ export default {
 
 <style>
 .about {
-  margin-top: 1200px;
+  margin-top: 500px;
   margin-left: 50px;
   color: white;
   display: flex;
@@ -45,11 +45,10 @@ export default {
 
 .about-photo img {
   border-radius: 30px;
-  left: 50px;
+  left: 10px;
 }
 
 .CVname {
-  margin-left: 30px;
   font-size: 2rem;
 }
 
@@ -72,7 +71,5 @@ export default {
 }
 .about-contact a:hover {
   color: #00adb5;
-}
-.about-contact-i {
 }
 </style>
