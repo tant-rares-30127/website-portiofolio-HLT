@@ -17,3 +17,10 @@ export default {
   },
 };
 </script>
+
+<style>
+.work-obj {
+  color: var(--blue);
+  text-align: center;
+}
+</style>

@@ -1,18 +1,26 @@
 <template>
   <div class="about-education">
     <h2>Education</h2>
-    <EducationObject
-      v-for="ed in this.edList"
-      :key="ed.id"
-      :institutionName="ed.institutionName"
-      :description="ed.description"
-      :startDate="ed.startDate"
-      :endDate="ed.endDate"
-    ></EducationObject>
+    <div class="education">
+      <EducationObject
+        v-for="ed in this.edList"
+        :key="ed.id"
+        :institutionName="ed.institutionName"
+        :description="ed.description"
+        :startDate="ed.startDate"
+        :endDate="ed.endDate"
+      ></EducationObject>
+    </div>
   </div>
 </template>
 
 <style>
+.about-education {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .about-education h2,
 .about-education h3 {
   background-color: var(--dark-gray);
@@ -21,12 +29,16 @@
   font-weight: bold;
   font-size: 24px;
   line-height: 28px;
-  padding-left: 4.7%;
   padding-top: 3%;
 }
 
 .about-education h3 {
   font-weight: lighter;
+}
+
+.education {
+  display: flex;
+  gap: 2rem;
 }
 </style>
 

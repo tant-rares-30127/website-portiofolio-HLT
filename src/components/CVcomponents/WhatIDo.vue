@@ -3,14 +3,14 @@
     <table>
       <thead>
         <tr>
-          <th>What I do</th>
-          <th>What I use</th>
+          <th class="title">What I do</th>
+          <th class="title">What I use</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th>{{ whatIDo }}</th>
-          <th>{{ whatIUse }}</th>
+          <th class="do-use">{{ whatIDo }}</th>
+          <th class="do-use">{{ whatIUse }}</th>
         </tr>
       </tbody>
     </table>
@@ -18,14 +18,22 @@
 </template>
 
 <style>
+.title {
+  color: white;
+  font-size: 24px;
+}
+
+.do-use {
+  padding-top: 1rem;
+  color: var(--blue);
+}
+
 .about-whatido {
   padding-top: 5%;
 }
 .about-whatido th,
 .about-whatido td {
-  padding: 30px;
   background-color: var(--dark-gray);
-  color: #ffffff;
 }
 
 .about-whatido table {

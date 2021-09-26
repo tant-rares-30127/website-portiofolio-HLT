@@ -1,30 +1,33 @@
 <template>
   <div class="about-projects">
     <h2>Projects</h2>
-    <p>{{ projects }}</p>
+    <p class="projects">{{ projects }}</p>
     <ProjectObject
       v-for="proj in this.projList"
       :key="this.projList.indexOf(proj)"
       :name="proj"
     ></ProjectObject>
-    <p>-----in project comp-------</p>
   </div>
 </template>
 
 <style>
+.projects {
+  color: var(--blue);
+}
+
 .about-projects h2 {
   background-color: var(--dark-gray);
-  /* color: #ffffff; */
   font-weight: bold;
   font-style: normal;
   font-size: 24px;
   line-height: 28px;
-  padding-left: 4.7%;
+  display: flex;
+  align-self: center;
   padding-top: 3%;
+  color: white;
 }
 
 .about-projects table {
-  /* color: #ffffff; */
   margin-left: auto;
   margin-right: auto;
   border-radius: 1.2em;
@@ -40,6 +43,12 @@
 .about-projects tr {
   text-align: center;
   padding-left: 22%;
+}
+
+.about-projects {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
 }
 </style>
 
