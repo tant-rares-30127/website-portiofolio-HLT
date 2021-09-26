@@ -9,17 +9,17 @@
       <Form @submit="handleLogin" :validation-schema="schema">
         <div class="form-group">
           <label for="username">Username</label>
-          <Field name="username" type="text" class="form-control" />
+          <Field  name="username" type="text" class="form-control input-field" />
           <ErrorMessage name="username" class="error-feedback" />
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <Field name="password" type="password" class="form-control" />
+          <Field  name="password" type="password" class="form-control input-field" />
           <ErrorMessage name="password" class="error-feedback" />
         </div>
 
-        <div class="form-group">
-          <button class="btn btn-primary btn-block" :disabled="loading">
+        <div class="form-group text-center">
+          <button class="submit-btn" :disabled="loading">
             <span
               v-show="loading"
               class="spinner-border spinner-border-sm"
@@ -68,16 +68,17 @@ export default {
   },
   created() {
     if (this.loggedIn) {
-      this.$router.push("/profile");
+      this.$router.push("");
     }
   },
   methods: {
     handleLogin(user) {
+      let that = this;
       this.loading = true;
 
       this.$store.dispatch("auth/login", user).then(
         () => {
-          this.$router.push("/profile");
+          that.$router.push("");
         },
         (error) => {
           this.loading = false;
@@ -106,7 +107,7 @@ label {
 }
 
 .card {
-  background-color: #f7f7f7;
+  background-color: #393e46;
   padding: 20px 25px 30px;
   margin: 0 auto 25px;
   margin-top: 50px;
@@ -128,6 +129,18 @@ label {
   border-radius: 50%;
 }
 
+.input-field{
+  background: #aad8d3;
+}
+.submit-btn {
+  position: relative;
+  width: 6rem;
+  height: 10%;
+  /* left: 40%; */
+  background: #00adb5;
+  border-radius: 50px;
+  margin-top: 2rem;
+}
 .error-feedback {
   color: red;
 }
