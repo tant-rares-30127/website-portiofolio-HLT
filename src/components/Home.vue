@@ -1,7 +1,7 @@
 <template>
   <div class="select-cv-page">
     <!-- <navbar></navbar> -->
-    <div class="navbar">
+    <div class="navbar_login">
       <div v-if="!currentUser" class="navbar-nav ml-auto">
         <button class="login" @click="$router.push('/login')">
           <font-awesome-icon icon="sign-in-alt" /> Login
@@ -69,6 +69,7 @@ export default {
     },
   },
   methods: {
+    getById() {},
     getAllCVs() {
       this.loading = true;
 
@@ -126,10 +127,11 @@ export default {
   margin-bottom: 0px;
 }
 
-.navbar {
+
+.navbar_login {
   display: flex;
-  justify-content: end;
   height: 7%;
+  justify-content: end;
 }
 
 .login {
@@ -138,9 +140,8 @@ export default {
   font-weight: bold;
   border: none;
   background: none;
-  position: absolute;
   padding-top: 1rem;
-  margin-left: 10%;
+  padding-right: 3rem;
 }
 
 .login:hover,

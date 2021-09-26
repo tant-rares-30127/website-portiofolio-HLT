@@ -120,10 +120,22 @@ label {
   top: 20%;
   border-radius: 25px;
 }
+
 .input-field {
   background: var(--light-blue);
   font-size: 20px;
 }
+
+.profile-img-card {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 10px;
+  display: block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
 .submit-btn {
   position: relative;
   width: 6rem;
