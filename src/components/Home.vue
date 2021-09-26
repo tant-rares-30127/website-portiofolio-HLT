@@ -1,5 +1,6 @@
 <template>
   <div class="select-cv-page">
+    <!-- <navbar></navbar> -->
     <div class="navbar">
       <div v-if="!currentUser" class="navbar-nav ml-auto">
         <li class="nav-item">
@@ -29,29 +30,32 @@
     </div>
     <div class="content">
       <div class="select-cv-area">
-        <user
+        <cvs
           v-for="cv in this.cvs"
           :key="cv.id"
           :id="cv.id"
           :firstName="cv.user.firstName"
           :lastName="cv.user.lastName"
-          :photoSrc="cv.photoSrc"
+          :imgSrc="imgPath + cv.imgSrc"
           class="user-item"
           @click="getById(cv.id)"
-        ></user>
+        ></cvs>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import User from "../components/User.vue";
+import Cvs from "./CVs.vue";
+import variables from "../../variables";
+//import Navbar from "./Navbar.vue";
 
 export default {
   name: "Home",
-  components: { User },
+  components: { Cvs },
   data() {
     return {
+      imgPath: variables.IMG_URL,
       cvs: ""
     };
   },
@@ -65,6 +69,7 @@ export default {
     }
   },
   methods: {
+    getById(){},
     getAllCVs() {
       this.loading = true;
 
