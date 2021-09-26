@@ -1,11 +1,13 @@
 <template>
   <div class="select-cv-page">
     <!-- <navbar></navbar> -->
-    <div class="navbar_login">
+    <div class="navbar">
       <div v-if="!currentUser" class="navbar-nav ml-auto">
-        <button class="login" @click="$router.push('/login')">
-          <font-awesome-icon icon="sign-in-alt" /> Login
-        </button>
+        <li class="nav-item">
+          <button class="login" @click="$router.push('/login')">
+            <font-awesome-icon icon="sign-in-alt" /> Login
+          </button>
+        </li>
       </div>
       <div v-if="currentUser" class="navbar-nav ml-auto">
         <li class="nav-item d-inline-flex">
@@ -27,39 +29,60 @@
       </div>
     </div>
     <div class="content">
-      <div class="select-cv-area">
-        <cvs
-          v-for="cv in this.cvs"
-          :key="cv.id"
-          :id="cv.id"
-          :firstName="cv.user.firstName"
-          :lastName="cv.user.lastName"
-          :imgSrc="imgPath + cv.imgSrc"
-          class="user-item"
-          @click="getById(cv.id)"
-        ></cvs>
-      </div>
+      <WhoIAm
+        :user="this.user"
+        :imgSrc="imgPath + this.currentCV.imgSrc"
+        :introduction="this.currentCV.introduction"
+      ></WhoIAm>
+      <Educationpart :edList="this.currentCV.education"></Educationpart>
+      <WorkExperience
+        :workList="this.currentCV.workExperience"
+      ></WorkExperience>
+      <Languages :langList="this.currentCV.language"></Languages>
+      <WhatIDo
+        :whatIDo="this.currentCV.whatIDo"
+        :whatIUse="this.currentCV.whatIUse"
+      ></WhatIDo>
+      <Projects :projects="this.currentCV.projects"></Projects>
+      <Skills :skills="this.currentCV.skills"></Skills>
     </div>
   </div>
 </template>
 
 <script>
-import Cvs from "./CVs.vue";
 import variables from "../../variables";
-//import Navbar from "./Navbar.vue";
+import WhoIAm from "./CVcomponents/WhoIAm.vue";
+import Educationpart from "./CVcomponents/Educationpart.vue";
+import WorkExperience from "./CVcomponents/WorkExperience.vue";
+import Languages from "./CVcomponents/Languages.vue";
+import WhatIDo from "./CVcomponents/WhatIDo.vue";
+import Projects from "./CVcomponents/Projects.vue";
+import Skills from "./CVcomponents/Skills.vue";
 
 export default {
   name: "Home",
-  components: { Cvs },
+  components: {
+    WhoIAm,
+    Educationpart,
+    WorkExperience,
+    Languages,
+    WhatIDo,
+    Projects,
+    Skills,
+  },
   data() {
     return {
       imgPath: variables.IMG_URL,
-      cvs: "",
+      currentCV: [],
+      user: {
+        firstName: "",
+        lastName: "",
+      },
     };
   },
   mounted() {
     this.loading = true;
-    this.getAllCVs();
+    this.getCVFromStore();
   },
   computed: {
     currentUser() {
@@ -69,42 +92,10 @@ export default {
     },
   },
   methods: {
-    getById() {},
-    getAllCVs() {
+    getCVFromStore() {
       this.loading = true;
-
-      this.$store.dispatch("cvs/getAll").then(
-        () => {
-          this.cvs = this.$store.state.cvs.cvs;
-        },
-        (error) => {
-          this.loading = false;
-          this.message =
-            (error.response &&
-              error.response.data &&
-              error.response.data.message) ||
-            error.message ||
-            error.toString();
-        }
-      );
-    },
-    getById(id) {
-      this.loading = true;
-
-      this.$store.dispatch("cvs/getById", id).then(
-        () => {
-          this.$router.push("/cv");
-        },
-        (error) => {
-          this.loading = false;
-          this.message =
-            (error.response &&
-              error.response.data &&
-              error.response.data.message) ||
-            error.message ||
-            error.toString();
-        }
-      );
+      this.currentCV = this.$store.state.cvs.currentCV;
+      this.user = this.$store.state.cvs.currentCV.user;
     },
     logOut() {
       this.$store.dispatch("auth/logout");
@@ -121,27 +112,22 @@ export default {
   padding: 0;
   box-sizing: border-box;
   height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 0px;
+  /* overflow: hidden; */
 }
 
-
-.navbar_login {
-  display: flex;
+.navbar {
   height: 7%;
-  justify-content: end;
 }
 
 .login {
   color: white;
   font-size: 24px;
+  top: 20%;
+  left: 80%;
   font-weight: bold;
   border: none;
   background: none;
-  padding-top: 1rem;
-  padding-right: 3rem;
+  position: absolute;
 }
 
 .login:hover,
@@ -156,8 +142,7 @@ export default {
   justify-content: center;
   align-content: center;
   width: 100%;
-  height: 80%;
-  background-color: var(--dark-gray);
+  height: 100%;
 }
 
 .select-cv-area {
@@ -165,6 +150,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  margin: 40%;
 }
 .logged-user {
   margin-left: 10px;

@@ -1,7 +1,7 @@
 <template>
   <div class="cv-box">
     <a href="#">
-      <div class="cv-info" @click="$router.push(`/cv/${id}`)">
+      <div class="cv-info">
         <img :src="imgSrc" alt="profileImage" />
         <div class="text-box">
           <p id="firstName" class="firstname">{{ firstName }}</p>
@@ -55,22 +55,19 @@ export default {
 }
 
 .text-box p {
-  font-family: Roboto;
+  font: Roboto;
   color: black;
   text-align: center;
   line-height: 20px;
 }
 
 .text-box .firstname {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-weight: bold;
   font-size: 24px;
   padding-top: 17%;
 }
 
 .text-box .lastname {
-  font: roboto;
   font-weight: normal;
   font-size: 21px;
   margin-bottom: 20%;
