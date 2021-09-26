@@ -3,11 +3,9 @@
     <!-- <navbar></navbar> -->
     <div class="navbar">
       <div v-if="!currentUser" class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <button class="login" @click="$router.push('/login')">
-            <font-awesome-icon icon="sign-in-alt" /> Login
-          </button>
-        </li>
+        <button class="login" @click="$router.push('/login')">
+          <font-awesome-icon icon="sign-in-alt" /> Login
+        </button>
       </div>
       <div v-if="currentUser" class="navbar-nav ml-auto">
         <li class="nav-item d-inline-flex">
@@ -56,7 +54,7 @@ export default {
   data() {
     return {
       imgPath: variables.IMG_URL,
-      cvs: ""
+      cvs: "",
     };
   },
   mounted() {
@@ -68,7 +66,7 @@ export default {
       return this.$store.state.auth.user == null
         ? null
         : this.$store.state.auth.user.user;
-    }
+    },
   },
   methods: {
     getAllCVs() {
@@ -78,7 +76,7 @@ export default {
         () => {
           this.cvs = this.$store.state.cvs.cvs;
         },
-        error => {
+        (error) => {
           this.loading = false;
           this.message =
             (error.response &&
@@ -96,7 +94,7 @@ export default {
         () => {
           this.$router.push("/cv");
         },
-        error => {
+        (error) => {
           this.loading = false;
           this.message =
             (error.response &&
@@ -110,8 +108,8 @@ export default {
     logOut() {
       this.$store.dispatch("auth/logout");
       this.$router.push("");
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -122,22 +120,27 @@ export default {
   padding: 0;
   box-sizing: border-box;
   height: 100vh;
-  /* overflow: hidden; */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0px;
 }
 
 .navbar {
+  display: flex;
+  justify-content: end;
   height: 7%;
 }
 
 .login {
   color: white;
   font-size: 24px;
-  top: 20%;
-  left: 80%;
   font-weight: bold;
   border: none;
   background: none;
   position: absolute;
+  padding-top: 1rem;
+  margin-left: 10%;
 }
 
 .login:hover,
@@ -152,7 +155,8 @@ export default {
   justify-content: center;
   align-content: center;
   width: 100%;
-  height: 100%;
+  height: 80%;
+  background-color: var(--dark-gray);
 }
 
 .select-cv-area {
@@ -160,7 +164,6 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  margin: 40%;
 }
 .logged-user {
   margin-left: 10px;

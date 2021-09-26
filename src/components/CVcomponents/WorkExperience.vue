@@ -22,7 +22,7 @@
   font-weight: bold;
 
   font-style: normal;
-  font-size: 24px;
+  font-size: 36px;
   line-height: 28px;
   padding-top: 3%;
 }

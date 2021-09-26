@@ -39,7 +39,7 @@ export default {
   margin-left: 50px;
   color: white;
   display: flex;
-  justify-content: space-around;
+  gap: 3rem;
   padding-top: 3%;
 }
 
@@ -49,7 +49,10 @@ export default {
 }
 
 .CVname {
-  font-size: 2rem;
+  font-size: 4rem;
+  color: var(--light-gray);
+  font-style: italic;
+  font-weight: bold;
 }
 
 .about-contact h2 {

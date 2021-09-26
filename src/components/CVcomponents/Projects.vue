@@ -1,12 +1,7 @@
 <template>
   <div class="about-projects">
-    <h2>Projects</h2>
+    <p class="projects-title">Projects</p>
     <p class="projects">{{ projects }}</p>
-    <ProjectObject
-      v-for="proj in this.projList"
-      :key="this.projList.indexOf(proj)"
-      :name="proj"
-    ></ProjectObject>
   </div>
 </template>
 
@@ -15,15 +10,15 @@
   color: var(--blue);
 }
 
-.about-projects h2 {
+.about-projects .projects-title {
   background-color: var(--dark-gray);
   font-weight: bold;
   font-style: normal;
-  font-size: 24px;
+  font-size: 36px;
   line-height: 28px;
   display: flex;
   align-self: center;
-  padding-top: 3%;
+  padding-top: 10%;
   color: white;
 }
 
@@ -53,19 +48,7 @@
 </style>
 
 <script>
-import ProjectObject from "./Objects/ProjectObject.vue";
 export default {
   props: ["projects"],
-  components: { ProjectObject },
-  data() {
-    return {
-      projList: this.splitProjects,
-    };
-  },
-  computed: {
-    splitProjects() {
-      return this.projects.split(",");
-    },
-  },
 };
 </script>

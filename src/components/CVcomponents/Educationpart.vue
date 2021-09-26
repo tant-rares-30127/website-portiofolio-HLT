@@ -27,7 +27,7 @@
   color: #ffffff;
   font-style: normal;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 36px;
   line-height: 28px;
   padding-top: 3%;
 }

@@ -1,11 +1,11 @@
 <template>
   <div class="cv-box">
     <a href="#">
-      <div class="cv-info" >
+      <div class="cv-info">
         <img :src="imgSrc" alt="profileImage" />
         <div class="text-box">
-          <p id="firstName">{{ firstName }}</p>
-          <p id="lastName">{{ lastName }}</p>
+          <p id="firstName" class="firstname">{{ firstName }}</p>
+          <p id="lastName" class="lastname">{{ lastName }}</p>
         </div>
       </div>
     </a>
@@ -20,10 +20,10 @@ export default {
 
 <style>
 .cv-box {
-  font: 'roboto';
   background-color: none;
   width: 25rem;
   padding: 1.5rem;
+  align-self: center;
 }
 
 .cv-box a {
@@ -55,19 +55,19 @@ export default {
 }
 
 .text-box p {
-  font-family: Roboto;
+  font: Roboto;
   color: black;
   text-align: center;
   line-height: 20px;
 }
 
-.text-box #name {
+.text-box .firstname {
   font-weight: bold;
   font-size: 24px;
   padding-top: 17%;
 }
 
-.text-box #position {
+.text-box .lastname {
   font-weight: normal;
   font-size: 21px;
   margin-bottom: 20%;
