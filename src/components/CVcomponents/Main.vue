@@ -1,11 +1,13 @@
 <template>
-  <WhoIAm></WhoIAm>
-  <Educationpart></Educationpart>
-  <WorkExperience></WorkExperience>
-  <Languages></Languages>
-  <WhatIDo></WhatIDo>
-  <Projects></Projects>
-  <Skills></Skills>
+  <div class="wrapper">
+    <WhoIAm></WhoIAm>
+    <Educationpart></Educationpart>
+    <WorkExperience></WorkExperience>
+    <Languages></Languages>
+    <WhatIDo></WhatIDo>
+    <Projects></Projects>
+    <Skills></Skills>
+  </div>
 </template>
 
 <script>
@@ -30,3 +32,5 @@ export default {
   },
 };
 </script>
+
+<style></style>

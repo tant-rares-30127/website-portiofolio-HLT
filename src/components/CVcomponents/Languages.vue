@@ -1,18 +1,26 @@
 <template>
   <div class="about-languages">
     <h2>Languages</h2>
-    <LanguageObject
-      v-for="lang in this.langList"
-      :key="lang.id"
-      :name="lang.name"
-      :understanding="lang.understanding"
-      :speaking="lang.speaking"
-      :writing="lang.writing"
-    ></LanguageObject>
+    <div class="languages">
+      <LanguageObject
+        v-for="lang in this.langList"
+        :key="lang.id"
+        :name="lang.name"
+        :understanding="lang.understanding"
+        :speaking="lang.speaking"
+        :writing="lang.writing"
+      ></LanguageObject>
+    </div>
   </div>
 </template>
 
 <style>
+.about-languages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .about-languages h2 {
   background-color: var(--dark-gray);
   color: #ffffff;
@@ -21,7 +29,6 @@
   font-style: normal;
   font-size: 24px;
   line-height: 28px;
-  padding-left: 4.7%;
   padding-top: 3%;
 }
 
@@ -44,6 +51,12 @@
 .about-languages tr {
   text-align: center;
   padding-left: 22%;
+}
+
+.languages {
+  display: flex;
+  gap: 3rem;
+  padding-top: 1rem;
 }
 </style>
 

@@ -31,12 +31,20 @@ export default {
 }
 
 .about-skills h2 {
-  color: var(--dark-gray);
-  padding-right: 87.5%;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
   line-height: 28px;
   text-align: center;
+  display: flex;
+  align-self: center;
+  color: #ffffff;
+}
+
+.about-skills {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  color: var(--blue);
 }
 </style>

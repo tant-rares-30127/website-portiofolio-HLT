@@ -17,3 +17,10 @@ export default {
   },
 };
 </script>
+
+<style>
+.ed-obj {
+  color: var(--blue);
+  text-align: center;
+}
+</style>
