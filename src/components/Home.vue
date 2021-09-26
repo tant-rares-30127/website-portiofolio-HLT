@@ -52,7 +52,7 @@ export default {
   components: { User },
   data() {
     return {
-      cvs: ""
+      cvs: "",
     };
   },
   mounted() {
@@ -61,10 +61,15 @@ export default {
   },
   computed: {
     currentUser() {
-      return this.$store.state.auth.user == null ? null : this.$store.state.auth.user.user;
-    }
+      return this.$store.state.auth.user == null
+        ? null
+        : this.$store.state.auth.user.user;
+    },
   },
   methods: {
+    getById(currentId) {
+      console.log(currentId);
+    },
     getAllCVs() {
       let that = this;
       this.loading = true;
@@ -72,7 +77,7 @@ export default {
       this.$store.dispatch("cvs/getAll").then(
         () => {
           that.cvs = that.$store.state.cvs.cvs;
-          that.cvs
+          that.cvs;
         },
         (error) => {
           this.loading = false;
@@ -87,9 +92,9 @@ export default {
     },
     logOut() {
       this.$store.dispatch("auth/logout");
-      this.$router.push("");
-    }
-  }
+      this.$router.push("/");
+    },
+  },
 };
 </script>
 

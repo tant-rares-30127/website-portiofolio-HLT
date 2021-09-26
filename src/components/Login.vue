@@ -9,12 +9,16 @@
       <Form @submit="handleLogin" :validation-schema="schema">
         <div class="form-group">
           <label for="username">Username</label>
-          <Field  name="username" type="text" class="form-control input-field" />
+          <Field name="username" type="text" class="form-control input-field" />
           <ErrorMessage name="username" class="error-feedback" />
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <Field  name="password" type="password" class="form-control input-field" />
+          <Field
+            name="password"
+            type="password"
+            class="form-control input-field"
+          />
           <ErrorMessage name="password" class="error-feedback" />
         </div>
 
@@ -41,6 +45,7 @@
 <script>
 import { Form, Field, ErrorMessage } from "vee-validate";
 import * as yup from "yup";
+import CVsService from "../services/cvs.service.js";
 
 export default {
   name: "Login",
@@ -68,17 +73,20 @@ export default {
   },
   created() {
     if (this.loggedIn) {
-      this.$router.push("");
+      this.$router.push("/");
     }
   },
   methods: {
     handleLogin(user) {
-      let that = this;
       this.loading = true;
 
       this.$store.dispatch("auth/login", user).then(
         () => {
-          that.$router.push("");
+          CVsService.getById(1).then((response) => {
+            this.content = response;
+            console.log(response);
+          });
+          this.$router.push("/");
         },
         (error) => {
           this.loading = false;
@@ -129,7 +137,7 @@ label {
   border-radius: 50%;
 }
 
-.input-field{
+.input-field {
   background: #aad8d3;
 }
 .submit-btn {
