@@ -34,7 +34,7 @@
           :id="cv.id"
           :firstName="cv.user.firstName"
           :lastName="cv.user.lastName"
-          :imgSrc="imgPath + cv.imgSrc"
+          :imgSrc="cv.imgSrc"
           class="user-item"
           @click="getById(cv.id)"
         ></cvs>

@@ -31,7 +31,7 @@
     <div class="content-cv">
       <WhoIAm
         :user="this.user"
-        :imgSrc="imgPath + this.currentCV.imgSrc"
+        :imgSrc="this.currentCV.imgSrc"
         :introduction="this.currentCV.introduction"
       ></WhoIAm>
       <Educationpart :edList="this.currentCV.education"></Educationpart>
