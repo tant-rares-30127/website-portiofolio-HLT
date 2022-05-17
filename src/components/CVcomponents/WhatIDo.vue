@@ -29,6 +29,7 @@
 }
 
 .about-whatido {
+  display: flex;
   padding-top: 5%;
 }
 .about-whatido th,

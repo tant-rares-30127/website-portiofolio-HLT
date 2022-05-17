@@ -13,7 +13,6 @@
       </div>
       <div class="about-contact">
         <h2>Contact</h2>
-        <br />
         <div class="about-contact-i">
           <a href="https://www.linkedin.com/"
             ><i class="fab fa-linkedin"></i
@@ -57,7 +56,6 @@ export default {
 
 .about-contact h2 {
   padding-right: 100%;
-  padding-top: 3%;
   color: #ffffff;
   font-style: normal;
   font-weight: bold;
