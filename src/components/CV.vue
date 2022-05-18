@@ -1,6 +1,5 @@
 <template>
   <div class="select-cv-page">
-    <!-- <navbar></navbar> -->
     <div class="navbar">
       <div v-if="!currentUser" class="navbar-nav">
         <li class="nav-item">
@@ -75,8 +74,6 @@ export default {
       imgPath: variables.IMG_URL,
       currentCV: [],
       user: {
-        firstName: "",
-        lastName: "",
       },
     };
   },

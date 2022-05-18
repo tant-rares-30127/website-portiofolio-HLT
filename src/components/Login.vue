@@ -73,7 +73,6 @@ export default {
   methods: {
     handleLogin(user) {
       this.loading = true;
-
       this.$store.dispatch("auth/login", user).then(
         () => {
           this.$router.push("/");

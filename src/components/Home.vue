@@ -1,6 +1,5 @@
 <template>
   <div class="select-cv-page">
-    <!-- <navbar></navbar> -->
     <div class="navbar_login">
       <div v-if="!currentUser" class="navbar-nav ml-auto">
         <button class="login-home" @click="$router.push('/login')">
@@ -46,7 +45,6 @@
 <script>
 import Cvs from "./CVs.vue";
 import variables from "../../variables";
-//import Navbar from "./Navbar.vue";
 
 export default {
   name: "Home",
