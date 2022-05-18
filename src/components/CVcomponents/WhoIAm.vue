@@ -14,10 +14,10 @@
       <div class="about-contact">
         <h2>Contact</h2>
         <div class="about-contact-i">
-          <a href="https://www.linkedin.com/"
+          <a v-bind:href="user.linkedIn"
             ><i class="fab fa-linkedin"></i
           ></a>
-          <a href="https://github.com/"><i class="fab fa-github"></i></a>
+          <a v-bind:href="user.gitHub"><i class="fab fa-github"></i></a>
           <a href=""><i class="fas fa-phone-square"></i></a>
           <a href=""><i class="fas fa-envelope"></i></a>
         </div>
